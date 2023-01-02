@@ -3,13 +3,60 @@ import Foundation
 //: ## Step 1
 //: Create an enumeration for the value of a playing card. The values are: `ace`, `two`, `three`, `four`, `five`, `six`, `seven`, `eight`, `nine`, `ten`, `jack`, `queen`, and `king`. Set the raw type of the enum to `Int` and assign the ace a value of `1`.
 
-
+enum Cards: Int {
+    case ace = 1
+    case king
+    case queen
+    case jack
+    case two
+    case three
+    case four
+    case five
+    case six
+    case seven
+    case eight
+    case nine
+    case ten
+}
 
 
 
 //: ## Step 2
 //: Once you've defined the enum as described above, take a look at this built-in protocol, [CustomStringConvertible](https://developer.apple.com/documentation/swift/customstringconvertible) and make the enum conform to that protocol. Make the face cards return a string of their name, and for the numbered cards, simply have it return that number as a string.
-
+extension Cards: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .ace:
+            return "(Ace)"
+        case .king:
+            return "King"
+        case .queen:
+            return "Queen"
+        case .jack:
+            return "Jack"
+        case .ten:
+            return "Ten"
+        case .nine:
+            return "Nine"
+        case .eight:
+            return "Eight"
+        case .seven:
+            return "Seven"
+        case .six:
+            return "Six"
+        case .five:
+            return "Five"
+        case .four:
+            return "Four"
+        case.three:
+            return "Three"
+        case .two:
+            return "Two"
+        }
+    }
+    
+    
+}
 
 
 
